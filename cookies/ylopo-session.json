@@ -2,13 +2,269 @@
   "cookies": [
     {
       "name": "_GRECAPTCHA",
-      "value": "fdsfsdfsdf-TkCf6KB0nZiMN4PK_i2FOjVlELd7ZqII1G-7VtysrshqcQxM_8",
-      "domain": "www.goddogle.com",
-      "path": "/recdsdaptcha",
-      "expires": 17732323190.423353,
+      "value": "09AG7bzvH3d6tSCkiWeRluZcDwogIa_mCsKSU5-TkCf6KB0nZiMN4PK_i2FOjVlELd7ZqII1G-7VtysrshqcQxM_8",
+      "domain": "www.google.com",
+      "path": "/recaptcha",
+      "expires": 1773233190.423353,
       "httpOnly": true,
       "secure": true,
       "sameSite": "None"
+    },
+    {
+      "name": "stars.sid",
+      "value": "s%3AcRtpL5TtcoJJbbJdHfA2nNEU-ijn2pFT.ZsgRuwUcPVhcdZ7dw8nGnGzuNOmQdfG4Yr8theaYAXU",
+      "domain": "stars.ylopo.com",
+      "path": "/",
+      "expires": 1765457193.981288,
+      "httpOnly": true,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "ajs_anonymous_id",
+      "value": "%221993df594d1c20-041649c7d28dd4-1f525631-e1000-1993df594d2c22%22",
+      "domain": ".ylopo.com",
+      "path": "/",
+      "expires": 1789217193,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_fbp",
+      "value": "fb.1.1757681129252.248598478268292062",
+      "domain": ".ylopo.com",
+      "path": "/",
+      "expires": 1765457192,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga",
+      "value": "GA1.2.1824141089.1757681137",
+      "domain": ".ylopo.com",
+      "path": "/",
+      "expires": 1792241137.282929,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_gid",
+      "value": "GA1.2.934844177.1757681137",
+      "domain": ".ylopo.com",
+      "path": "/",
+      "expires": 1757767537,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "_ga_S3HB9Z5YMS",
+      "value": "GS2.2.s1757681137$o1$g0$t1757681137$j60$l0$h0",
+      "domain": ".ylopo.com",
+      "path": "/",
+      "expires": 1792241137.629655,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "m",
+      "value": "c9589c76-f544-4976-97b6-93eb2ecde370c9eef1",
+      "domain": "m.stripe.com",
+      "path": "/",
+      "expires": 1792241197.489088,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "__stripe_mid",
+      "value": "f2453f30-ca65-4b97-8c0d-7eb155976ef2c14697",
+      "domain": ".stars.ylopo.com",
+      "path": "/",
+      "expires": 1789217197,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Strict"
+    },
+    {
+      "name": "__stripe_sid",
+      "value": "d57b1005-8d9e-43eb-95eb-9820814f46147cb40c",
+      "domain": ".stars.ylopo.com",
+      "path": "/",
+      "expires": 1757682997,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Strict"
+    },
+    {
+      "name": "fpjs_user_id",
+      "value": "3216",
+      "domain": ".ylopo.com",
+      "path": "/",
+      "expires": 1789217193,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "mp_6b95e6760a95b836a22b41774408b929_mixpanel",
+      "value": "%7B%22distinct_id%22%3A3216%2C%22%24device_id%22%3A%221993df594d1c20-041649c7d28dd4-1f525631-e1000-1993df594d2c22%22%2C%22mp_lib%22%3A%22Freshpaint%3A%20web%22%2C%22%24initial_referrer%22%3A%22%24direct%22%2C%22%24initial_referring_domain%22%3A%22%24direct%22%2C%22__mps%22%3A%7B%7D%2C%22__mpso%22%3A%7B%7D%2C%22__mpus%22%3A%7B%7D%2C%22__mpa%22%3A%7B%7D%2C%22__mpu%22%3A%7B%7D%2C%22__mpr%22%3A%5B%5D%2C%22__mpap%22%3A%5B%5D%2C%22%24user_id%22%3A3216%2C%22mp_name_tag%22%3A%22roman%40romanlopez.com%22%2C%22userId%22%3A3216%2C%22fullName%22%3A%22Roman%20Lopez%22%2C%22primaryRole%22%3A%22CLIENT%22%2C%22directory%22%3A%22Clients%22%2C%22hasDashboardAccess%22%3Atrue%2C%22customData%22%3A%7B%22permissions%22%3A%5B%7B%22partyId%22%3A10830%2C%22roles%22%3A%5B%22admin%22%5D%2C%22administrativeContact%22%3A%5B%22all%22%5D%2C%22isDyvaUnsubscribed%22%3Afalse%7D%5D%2C%22starAgentUser%22%3A%7B%7D%7D%2C%22%24source%22%3A%22Freshpaint%3A%20web%22%2C%22id%22%3A3216%2C%22%24email%22%3A%22roman%40romanlopez.com%22%7D",
+      "domain": "stars.ylopo.com",
+      "path": "/",
+      "expires": 1789217193,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "AWSALBTG",
+      "value": "0QJGSPcVD8OK9d5eGnJn4LrKn3Ph1qF4LJSCIWXpD8fz7oW2mQ17cHC+67NzSXsud0e5aPBd5WSIrw2GQL6D6LTVBteS2kZsJ949ZQSTCCh3twhDFPrGcso9SIlkN96xPkcHTsGDSG33+zqbQ6PCMNrhhM6JLLWS2N0DsgjSudUWQwNThE0=",
+      "domain": "stars.ylopo.com",
+      "path": "/",
+      "expires": 1758285992.98112,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "AWSALBTGCORS",
+      "value": "0QJGSPcVD8OK9d5eGnJn4LrKn3Ph1qF4LJSCIWXpD8fz7oW2mQ17cHC+67NzSXsud0e5aPBd5WSIrw2GQL6D6LTVBteS2kZsJ949ZQSTCCh3twhDFPrGcso9SIlkN96xPkcHTsGDSG33+zqbQ6PCMNrhhM6JLLWS2N0DsgjSudUWQwNThE0=",
+      "domain": "stars.ylopo.com",
+      "path": "/",
+      "expires": 1758285992.981233,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "intercom-session-rspqz68k",
+      "value": "U2JFL1FDdG9ZZGpGakhZMjhPR0ZxakZhR0lncFhPV2FqSTBaMHhJRW81R2YweUFUY3hpTy9qb1djUXg3MHBZUDlsS3djeTdtelNaaHVsYmgzcVRsc2lqTVFGbjU0RjkzcDVXdFZ6SURMZ1k9LS1wMUZLbzFrZ1JBR2dFM3NVWWNNMGdnPT0=--f468cec9d5ef2abf2811babd4c8ca35b57dbeead",
+      "domain": ".ylopo.com",
+      "path": "/",
+      "expires": 1758285994,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "intercom-device-id-rspqz68k",
+      "value": "8f6921e1-2406-4e67-a8de-46ca92d51ba5",
+      "domain": ".ylopo.com",
+      "path": "/",
+      "expires": 1781011194,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "mp_ddf5ce16-5872-40e5-a6ee-cdebbe6c0095_perfalytics",
+      "value": "eJx1UsFunDAQvecrVijHJbLNYnBPjbI5RIpySJtTVaHBNolVwNQ2K22j%2FffOkCa0UcoBj%2Bc93jye%2FZw1j9mnTSG43GZNh2XGlSpMV6qd4VqwnO243CldGVEbs8t5V4pSFjy3nDGWr2ShhchQw5KGULIqpJLigldlJWvOhUIQpukOhoXxJUGIxB9x94ckWCEl%2BTD%2F%2BigFq7qclbrSlax0bbHzfyNScG1I%2BSeqpDBbLAMNwfWA63OmU1jWJtrRXB%2FsmAguTidk%2BPUjIBfnxgWrE%2Bm17%2FZ6dSlVwYGXPGeGdbzlYEvWKVt%2F7JLYrbCSImmmdWBco%2BCqwAJ7Pxanc7ThxrwdlB3A9TQ9%2BAHGz8u795P9daH9gKLd3PevQd8TuLklFJEpuAHC8d73C3h1e3N99xX7L3%2Flw3Hp9g4zodN5griH%2BNR6COZSaxvjm1s9x%2BSHPSRYHE42DC5G50eifDvb4INdCOm4GOesLtgWDfd2JWRgBjdmZ9%2B3L5WLKUByB3vlxwQ6%2FUXs%2B4Xm4v54gIcxzm3UwbWWtDvooz0RHPFWXT6i%2BQcMjHyd6FDPKb7GveZ3%2Bg1tbtaG",
+      "domain": ".ylopo.com",
+      "path": "/",
+      "expires": 1789217203,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://stars.ylopo.com",
+      "localStorage": [
+        {
+          "name": "send_to_fp.13c1ec9b-86fe-496c-b87f-5304d05ed10c.reclaimEnd",
+          "value": "null"
+        },
+        {
+          "name": "mp_eventQueue",
+          "value": "eJyrrgUAAXUA+Q=="
+        },
+        {
+          "name": "topicsLastReferenceTime",
+          "value": "1757681192696"
+        },
+        {
+          "name": "fpjs_user_traits",
+          "value": "{\"userId\":3216,\"email\":\"roman@romanlopez.com\",\"fullName\":\"Roman Lopez\",\"primaryRole\":\"CLIENT\",\"directory\":\"Clients\",\"hasDashboardAccess\":true,\"customData\":{\"permissions\":[{\"partyId\":10830,\"roles\":[\"admin\"],\"administrativeContact\":[\"all\"],\"isDyvaUnsubscribed\":false}],\"starAgentUser\":{}},\"mp_lib\":\"Freshpaint: web\",\"$source\":\"Freshpaint: web\"}"
+        },
+        {
+          "name": "send_to_fp.13c1ec9b-86fe-496c-b87f-5304d05ed10c.inProgress",
+          "value": "{}"
+        },
+        {
+          "name": "_grecaptcha",
+          "value": "09ANMylNCoshGgviOdP9Xkx9RV8TARktsFnkTIP5Z_9w5spi87cvQb0K6R4i3ymmaztSlUxOQLxEUB3DPoUR2Fzts17m3EYnQZAS-qnKn92g2n2m9xj55rHKss-wu5UnYj"
+        },
+        {
+          "name": "intercom.intercom-state",
+          "value": "{\"app\":{\"openConfig\":{\"layout\":\"default\",\"unifiedStyling\":true,\"openTo\":\"home\",\"spaces\":[{\"type\":\"home\",\"label\":\"Home\",\"navigationLabel\":\"Home\",\"badge\":null},{\"type\":\"messages\",\"label\":\"Messages\",\"navigationLabel\":\"Messages\",\"badge\":{\"badgeType\":\"unread\",\"label\":1}},{\"type\":\"tickets\",\"label\":\"Tickets\",\"navigationLabel\":\"Tickets\",\"badge\":null}],\"userHasReceivedChecklists\":false,\"userHasLiveNewsfeed\":false,\"userHasTickets\":false},\"selfServeSuggestionsMatch\":false,\"name\":\"Ylopo\",\"features\":{\"anonymousInboundMessages\":true,\"googleAnalytics\":false,\"hubspotInstalled\":false,\"inboundMessages\":true,\"marketoEnrichmentInstalled\":false,\"googleAnalytics4Integration\":true},\"inboundConversationsDisabled\":false,\"isDeveloperWorkspace\":false,\"customGoogleAnalyticsTrackerId\":null},\"launcher\":{\"isLauncherEnabled\":false},\"launcherDiscoveryMode\":{\"hasDiscoveredLauncher\":true},\"launcherSettings\":{\"alignment\":\"right\",\"color\":\"#0071b2\",\"colorDark\":\"#1a8bcc\",\"hasRequiredFeatures\":true,\"horizontalPadding\":20,\"instantBootEnabled\":false,\"launcherLogoUrl\":null,\"launcherLogoDarkUrl\":null,\"secondaryColor\":\"#0071b2\",\"secondaryColorDark\":\"#1a8bcc\",\"showLauncher\":false,\"themeMode\":\"light\",\"updatedAt\":1757639133,\"verticalPadding\":20,\"isLoading\":false},\"user\":{\"role\":\"user\",\"locale\":\"en\",\"hasConversations\":true},\"message\":{},\"conversations\":{\"byId\":{\"215470778638460\":{\"fetchState\":\"partial\",\"dismissed\":true,\"read\":false}}},\"openOnBoot\":{\"type\":null,\"metadata\":{},\"lastOpenAtTimestamp\":1757681206345},\"operator\":{\"lastComposerEvent\":0},\"router\":{\"isInitialized\":true,\"navigationQueue\":[],\"action\":\"POP\",\"location\":{\"pathname\":\"/home\",\"search\":\"\",\"hash\":\"\",\"state\":null,\"key\":\"default\"}}}"
+        },
+        {
+          "name": "send_to_fp.13c1ec9b-86fe-496c-b87f-5304d05ed10c.ack",
+          "value": "1757681205765"
+        },
+        {
+          "name": "fpjs_user_id",
+          "value": "3216"
+        },
+        {
+          "name": "lastExternalReferrerTime",
+          "value": "1757681129238"
+        },
+        {
+          "name": "__mpq_6b95e6760a95b836a22b41774408b929_ev",
+          "value": "[]"
+        },
+        {
+          "name": "send_to_fp.13c1ec9b-86fe-496c-b87f-5304d05ed10c.queue",
+          "value": "[]"
+        },
+        {
+          "name": "__mpq_6b95e6760a95b836a22b41774408b929_pp",
+          "value": "[]"
+        },
+        {
+          "name": "send_to_fp.13c1ec9b-86fe-496c-b87f-5304d05ed10c.reclaimStart",
+          "value": "null"
+        },
+        {
+          "name": "fpjs_group_id",
+          "value": "null"
+        },
+        {
+          "name": "lastExternalReferrer",
+          "value": "empty"
+        },
+        {
+          "name": "debug",
+          "value": "undefined"
+        },
+        {
+          "name": "ajs_anonymous_id",
+          "value": "\"1993df594d1c20-041649c7d28dd4-1f525631-e1000-1993df594d2c22\""
+        },
+        {
+          "name": "fpjs_group_properties",
+          "value": "{}"
+        }
+      ]
+    },
+    {
+      "origin": "https://www.google.com",
+      "localStorage": [
+        {
+          "name": "rc::a",
+          "value": "dzdycWc3dm92ZTM5"
+        },
+        {
+          "name": "rc::f",
+          "value": "0aALOlZHb2TPOZ0Gm_UQ1ktOm7GQn68irXnSIgtpgHYKrZZB6kFuKVcW1ce9Ml8ss8mKX7mkY"
+        }
+      ]
     }
   ]
 }
