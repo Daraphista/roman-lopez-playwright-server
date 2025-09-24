@@ -3,7 +3,8 @@ name: Deploy to Droplet
 on:
   push:
     branches:
-      - main  # or your deployment branch
+      - main   # deploys when you push to main
+  workflow_dispatch:   # 👈 allows manual trigger from GitHub UI
 
 jobs:
   deploy:
