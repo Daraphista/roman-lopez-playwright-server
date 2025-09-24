@@ -35,6 +35,27 @@ async function getYlopoSellerReport(ylopoLeadUrl, address) {
       process.exit(1);
     }
 
+    if (!ylopoLeadUrl) { 
+      logEvent({
+        automation: scriptName,
+        action: 'in-progress',
+        status: 'error-progress',
+        startTime,
+        metadata: { input: req.body.input, error: 'Missing ylopoLeadUrl parameter' }
+      });
+      return res.status(400).json({ error: 'Missing ylopoLeadUrl parameter' });
+    }
+
+    if (!address) {
+      logEvent({
+        automation: scriptName,
+        action: 'in-progress',
+        status: 'error-progress',
+        startTime,
+        metadata: { input: req.body.input, error: 'Missing address parameter' }
+      });
+      return res.status(400).json({ error: 'Missing address parameter' });
+    }
 
     await humanPause(page);
     await page.locator('[data-testid="user-action-icon"]:has-text("Create New Seller Alert") [data-testid="user-action-icon-clickable"]').click();
@@ -85,8 +106,8 @@ async function getYlopoSellerReport(ylopoLeadUrl, address) {
 }
 
 export default async function run(input = {}) {
-  const ylopoLeadUrl = input.ylopoLeadUrl || 'https://app.ylopo.com/lead/12345'; // Replace with a valid lead URL
-  const address = input.address || '123 Main St, Anytown, USA'; // Replace with a valid address
+  const ylopoLeadUrl = input.ylopoLeadUrl
+  const address = input.address
 
   const result = await getYlopoSellerReport(ylopoLeadUrl, address);
 
