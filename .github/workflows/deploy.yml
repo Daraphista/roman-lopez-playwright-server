@@ -19,7 +19,7 @@ jobs:
           username: ${{ secrets.DROPLET_USER }}
           key: ${{ secrets.DROPLET_KEY }}
           script: |
-            cd ~/my-automation-app
+            cd ~/playwright-automation-template
             git pull origin main
             docker compose down -v
             docker compose up -d --build
