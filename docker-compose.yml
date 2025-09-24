@@ -1,0 +1,12 @@
+services:
+  automation:
+    build: .
+    container_name: playwright_automation
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./scripts:/app/scripts
+      - ./cookies:/app/cookies
+    env_file:
+      - .env
+    restart: unless-stopped
