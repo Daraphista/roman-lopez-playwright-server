@@ -23,4 +23,5 @@ jobs:
             cd ~/playwright-automation-template
             git pull origin main
             docker compose down -v
-            docker compose up -d --build
+            docker compose build --no-cache
+            docker compose up -d
