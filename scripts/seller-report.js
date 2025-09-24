@@ -3,12 +3,17 @@ import { chromium } from 'playwright';
 import { humanPause } from '../utils/humanPause.js';
 import { logEvent } from '../utils/logger.js';
 import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __filename = fileURLToPath(import.meta.url);
+const __dirname = path.dirname(__filename);
+
 
 const scriptName = 'seller-report';
 
 async function getYlopoSellerReport(ylopoLeadUrl, address) {
   const browser = await chromium.launch({ headless: true });
-  const sessionFile = path.resolve('app/cookies/ylopo-session.json');
+  const sessionFile = path.resolve(__dirname, '../cookies/ylopo-session.json');
   const context = await browser.newContext({ storageState: sessionFile });
   const page = await context.newPage();
   page.setDefaultTimeout(60000);
