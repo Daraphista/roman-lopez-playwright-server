@@ -1,0 +1,182 @@
+{
+  "cookies": [
+    {
+      "name": "richdesk",
+      "value": "c9f28d1b29e054f5a66c85a5580047c3",
+      "domain": "romanlopez.followupboss.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "richdesk",
+      "value": "e5da96a618701b163a13f4f6df7f0f3f",
+      "domain": "login.followupboss.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "rdtb",
+      "value": "329a82ee1f43be0dffef8daee61b830f7b1b0c4e76f6187bd8c1b0e01f6c5608",
+      "domain": ".romanlopez.followupboss.com",
+      "path": "/",
+      "expires": 1789460090.63442,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Strict"
+    },
+    {
+      "name": "rdack2",
+      "value": "3a58133ca28997c6b099eae5fc3eec023e529ff5f1b550749fcb5b500cb28910",
+      "domain": ".romanlopez.followupboss.com",
+      "path": "/",
+      "expires": -1,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "fs_lua",
+      "value": "1.1757924092588",
+      "domain": ".followupboss.com",
+      "path": "/",
+      "expires": 1757925892,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Strict"
+    },
+    {
+      "name": "fs_uid",
+      "value": "#W8E#c2291994-c151-458b-bf92-3ce6fa49f417:0a4f1ae5-b561-4d11-9a15-7efdd6e3e8d7:1757924092588::1#fa029894#/1789460095",
+      "domain": ".followupboss.com",
+      "path": "/",
+      "expires": 1789460095,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Strict"
+    },
+    {
+      "name": "NPS_b227f015_last_seen",
+      "value": "1757924095653",
+      "domain": "romanlopez.followupboss.com",
+      "path": "/",
+      "expires": 1765700095,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "NPS_b227f015_throttle",
+      "value": "1757967296110",
+      "domain": "romanlopez.followupboss.com",
+      "path": "/",
+      "expires": 1757967296,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "intercom-device-id-mfhsavoz",
+      "value": "d6b09f46-7ffe-44f7-8142-a676cd4f6f48",
+      "domain": ".followupboss.com",
+      "path": "/",
+      "expires": 1781254097,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    },
+    {
+      "name": "m",
+      "value": "354f544f-8a51-4708-91a7-3d219b96599fb7d5f5",
+      "domain": "m.stripe.com",
+      "path": "/",
+      "expires": 1792484097.262326,
+      "httpOnly": true,
+      "secure": true,
+      "sameSite": "None"
+    },
+    {
+      "name": "__stripe_mid",
+      "value": "ee7def74-ab8c-415b-9707-7748c97fec15819aca",
+      "domain": ".romanlopez.followupboss.com",
+      "path": "/",
+      "expires": 1789460097,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Strict"
+    },
+    {
+      "name": "__stripe_sid",
+      "value": "598f0164-76c7-4a33-a12e-c1af6abafff6da1e4c",
+      "domain": ".romanlopez.followupboss.com",
+      "path": "/",
+      "expires": 1757925897,
+      "httpOnly": false,
+      "secure": true,
+      "sameSite": "Strict"
+    },
+    {
+      "name": "intercom-session-mfhsavoz",
+      "value": "ZG5BcGJzb29uZGE5dXBvN2ZXMEJuRWcvOHZKYnZIbHBMZnJzc2U0bTVOQkxmV0p1TzBoblRuWFRQQ3NZYU82Z1JDT3JqZ2Q0Y1p0SURKb25Gak00YjFIb1dkZjRyZU5GRWp1ellYckJVY289LS1UYS9WbXhwNjJDTUJCSUo5SzZER053PT0=--4c345b7043a0618e5771b26d948f44e1b62d7457",
+      "domain": ".followupboss.com",
+      "path": "/",
+      "expires": 1758528897,
+      "httpOnly": false,
+      "secure": false,
+      "sameSite": "Lax"
+    }
+  ],
+  "origins": [
+    {
+      "origin": "https://romanlopez.followupboss.com",
+      "localStorage": [
+        {
+          "name": "intercom.intercom-state-mfhsavoz",
+          "value": "{\"app\":{\"openConfig\":{\"layout\":\"default\",\"unifiedStyling\":true,\"openTo\":\"home\",\"spaces\":[{\"type\":\"home\",\"label\":\"Home\",\"navigationLabel\":\"Home\",\"badge\":null},{\"type\":\"messages\",\"label\":\"Messages\",\"navigationLabel\":\"Messages\",\"badge\":null},{\"type\":\"tickets\",\"label\":\"Tickets\",\"navigationLabel\":\"Tickets\",\"badge\":null},{\"type\":\"news\",\"label\":\"News\",\"navigationLabel\":\"News\",\"badge\":null},{\"type\":\"tasks\",\"label\":\"Tasks\",\"navigationLabel\":\"Tasks\",\"badge\":null}],\"userHasReceivedChecklists\":false,\"userHasLiveNewsfeed\":false,\"userHasTickets\":false},\"selfServeSuggestionsMatch\":false,\"name\":\"Follow Up Boss\",\"features\":{\"anonymousInboundMessages\":true,\"googleAnalytics\":true,\"hubspotInstalled\":false,\"inboundMessages\":true,\"marketoEnrichmentInstalled\":false,\"googleAnalytics4Integration\":true},\"helpCenterSiteUrl\":\"https://intercom.help/mfhsavoz\",\"inboundConversationsDisabled\":true,\"isDeveloperWorkspace\":false,\"customGoogleAnalyticsTrackerId\":null},\"launcher\":{\"isLauncherEnabled\":false},\"launcherDiscoveryMode\":{\"hasDiscoveredLauncher\":false},\"launcherSettings\":{\"alignment\":\"right\",\"color\":\"#161616\",\"colorDark\":\"#989898\",\"hasRequiredFeatures\":true,\"horizontalPadding\":30,\"instantBootEnabled\":true,\"launcherLogoUrl\":null,\"launcherLogoDarkUrl\":null,\"secondaryColor\":\"#f3b942\",\"secondaryColorDark\":\"#f3b942\",\"showLauncher\":false,\"themeMode\":\"light\",\"updatedAt\":1757890919,\"verticalPadding\":80,\"isLoading\":false},\"user\":{\"role\":\"user\",\"locale\":\"en\",\"hasConversations\":true},\"message\":{},\"conversations\":{\"byId\":{}},\"openOnBoot\":{\"type\":null,\"metadata\":{},\"lastOpenAtTimestamp\":1757924097783},\"operator\":{\"lastComposerEvent\":0},\"router\":{\"isInitialized\":false,\"navigationQueue\":[]}}"
+        },
+        {
+          "name": "fs_intercom",
+          "value": "c2291994-c151-458b-bf92-3ce6fa49f417:0a4f1ae5-b561-4d11-9a15-7efdd6e3e8d7"
+        },
+        {
+          "name": "pusherTransportEncrypted",
+          "value": "{\"timestamp\":1757924095528,\"transport\":\"ws\",\"latency\":1809}"
+        },
+        {
+          "name": "loglevel",
+          "value": "WARN"
+        },
+        {
+          "name": "_fs_lua",
+          "value": "1.1757924092588"
+        },
+        {
+          "name": "FUB.desktopNotifications.enabled",
+          "value": "false"
+        },
+        {
+          "name": "_fs_uid",
+          "value": "#W8E#c2291994-c151-458b-bf92-3ce6fa49f417:0a4f1ae5-b561-4d11-9a15-7efdd6e3e8d7:1757924092588::1#fa029894#/1789460095"
+        }
+      ]
+    },
+    {
+      "origin": "https://voice.cohere.so",
+      "localStorage": [
+        {
+          "name": "local-cohere-chat-prev-user-id",
+          "value": "1610762598-5"
+        },
+        {
+          "name": "local-cohere-chat-user-id-to-local-client-id",
+          "value": "{\"1610762598-5\":\"_UpK69K3JwJHiSvTNiHAKBGkaI3pXzM-17isi8WoX-HHJJGDPQSka37pF5apUldO\"}"
+        }
+      ]
+    }
+  ]
+}
