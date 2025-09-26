@@ -143,7 +143,7 @@ async function sendFollowUpBossText (followupbossContactUrl, ylopoSellerReport) 
     await page.locator('form').filter({ hasText: 'Ylopo Seller Report' }).getByRole('button').first().click();
 
     await humanPause(page);
-    await page.getByText('Messages').click();
+    await page.getByText('Messages', {exact: true}).click();
 
     await humanPause(page);
     await page.locator('a').filter({ hasText: 'Templates' }).click();
