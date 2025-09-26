@@ -105,11 +105,73 @@ async function getYlopoSellerReport(ylopoLeadUrl, address) {
   }
 }
 
+async function sendFollowUpBossText (followupbossContactUrl, ylopoSellerReport) {
+  const browser = await chromium.launch({ headless: false });
+  const sessionFile = path.resolve(__dirname, '../cookies/followupboss-session.json');
+  const context = await browser.newContext({ storageState: sessionFile });
+  const page = await context.newPage();
+  page.setDefaultTimeout(60000);
+  
+  try {
+    await page.goto(followupbossContactUrl, { waitUntil: 'domcontentloaded' });
+
+    // If you're redirected to login, session expired — handle below
+    if (page.url().includes('/login')) {
+      logEvent({
+        automation: scriptName,
+        action: 'start',
+        status: 'error-progress',
+        startTime,
+        metadata: { input: req.body.input, error: 'Session not valid / expired. Re-save storageState by logging in manually.' }
+      });
+      await browser.close();
+      process.exit(1);
+    }
+
+    await page.goto(followupbossContactUrl);
+
+    await humanPause(page);
+    await page.locator('form').filter({ hasText: 'Ylopo Seller Report' }).hover()
+
+    humanPause(page);
+    await page.locator('form').filter({ hasText: 'Ylopo Seller Report' }).getByRole('img').click();
+
+    await humanPause(page);
+    await page.getByRole('main').getByRole('textbox').fill(ylopoSellerReport);
+
+    await humanPause(page);
+    await page.locator('form').filter({ hasText: 'Ylopo Seller Report' }).getByRole('button').first().click();
+
+    await humanPause(page);
+    await page.getByText('Messages').click();
+
+    await humanPause(page);
+    await page.locator('a').filter({ hasText: 'Templates' }).click();
+    await page.getByRole('textbox', { name: 'Search Text Templates' }).fill('Report- Seller Report, Home Owner Report,  Home Equity Report, 2.0 (NOT LOOKING TO SELL)');
+
+    await humanPause(page);
+    await page.getByText('Report- Seller Report, Home').first().click();
+
+    await humanPause(page);
+    await page.getByRole('button', { name: 'Send Text' }).click();
+    
+    await context.close();
+    await browser.close();
+
+    return { url: followupbossContactUrl, reportUrl: ylopoSellerReport };
+  } catch (err) {
+    await browser.close();
+    throw err;
+  }
+}
+
 export default async function run(input = {}) {
   const ylopoLeadUrl = input.ylopoLeadUrl
   const address = input.address
+  const followupbossContactUrl = input.followupbossContactUrl
 
   const result = await getYlopoSellerReport(ylopoLeadUrl, address);
+  const followupboss = await sendFollowUpBossText(followupbossContactUrl, result.reportUrl);
 
   return { ok: true, result: result.reportUrl };
 }
