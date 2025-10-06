@@ -105,7 +105,56 @@ async function getYlopoSellerReport(ylopoLeadUrl, address) {
   }
 }
 
-async function sendFollowUpBossText (followupbossContactUrl, ylopoSellerReport) {
+async function setSellerReportInFollowUpBoss(followupbossContactUrl, ylopoSellerReport) { 
+  const browser = await chromium.launch({ headless: false });
+  const sessionFile = path.resolve(__dirname, '../cookies/followupboss-session.json');
+  const context = await browser.newContext({ storageState: sessionFile });
+  const page = await context.newPage();
+  page.setDefaultTimeout(60000);
+
+  try {
+    await page.goto(followupbossContactUrl, { waitUntil: 'domcontentloaded' });
+
+    // If you're redirected to login, session expired — handle below
+    if (page.url().includes('/login')) {
+      logEvent({
+        automation: scriptName,
+        action: 'start',
+        status: 'error-progress',
+        startTime,
+        metadata: { input: req.body.input, error: 'Session not valid / expired. Re-save storageState by logging in manually.' }
+      });
+      await browser.close();
+      process.exit(1);
+    }
+
+    await page.goto(followupbossContactUrl);
+
+    const ylopoSellerReportField = page.locator('form:has(b:has-text("Ylopo Seller Report"))');
+
+    await humanPause(page);
+    await ylopoSellerReportField.hover();
+
+    await humanPause(page);
+    await ylopoSellerReportField.getByRole('img').click();
+
+    await humanPause(page);
+    await page.getByRole('main').getByRole('textbox').fill(ylopoSellerReport);
+
+    await humanPause(page);
+    await page.locator('form').filter({ hasText: 'Ylopo Seller Report' }).getByRole('button').first().click();  
+
+    await context.close();
+    await browser.close();
+
+    return { url: followupbossContactUrl, reportUrl: ylopoSellerReport };
+  } catch (err) {
+    await browser.close();
+    throw err;
+  }
+}
+
+async function sendFUBText(followupbossContactUrl, ylopoSellerReport, FUBtag) {
   const browser = await chromium.launch({ headless: false });
   const sessionFile = path.resolve(__dirname, '../cookies/followupboss-session.json');
   const context = await browser.newContext({ storageState: sessionFile });
@@ -130,35 +179,52 @@ async function sendFollowUpBossText (followupbossContactUrl, ylopoSellerReport) 
 
     await page.goto(followupbossContactUrl);
 
-    await humanPause(page);
-    await page.locator('form').filter({ hasText: 'Ylopo Seller Report' }).hover()
+    // 🕵️ Wait for link inside the "Ylopo Seller Report" form
+    const formLink = page.locator('form:has-text("Ylopo Seller Report") a');
 
-    humanPause(page);
-    await page.locator('form').filter({ hasText: 'Ylopo Seller Report' }).getByRole('img').click();
-
-    await humanPause(page);
-    await page.getByRole('main').getByRole('textbox').fill(ylopoSellerReport);
-
-    await humanPause(page);
-    await page.locator('form').filter({ hasText: 'Ylopo Seller Report' }).getByRole('button').first().click();
+    try {
+      await formLink.waitFor({ state: 'visible', timeout: 15000 });
+    } catch {
+      await browser.close();
+      throw new Error('❌ No Ylopo Seller Report link found — stopping script.');
+    }
 
     await humanPause(page);
-    await page.getByText('Messages', {exact: true}).click();
+    await page.getByText('Messages', { exact: true }).click();
+
+    if (FUBtag === "Seller Report AI") {
+      await humanPause(page);
+      await page.locator('div').filter({ hasText: /^Text$/ }).nth(3).click();
+      await humanPause(page);
+      await page.locator('div').filter({ hasText: /^Ylopo AI Text$/ }).first().click();
+    } else if (FUBtag === "Seller Report Callaction") {
+      await humanPause(page);
+      await page.locator('div').filter({ hasText: /^Text$/ }).nth(3).click();
+      await humanPause(page);
+      await page.locator('div').filter({ hasText: /^CallAction$/ }).first().click();
+    }
 
     await humanPause(page);
     await page.locator('a').filter({ hasText: 'Templates' }).click();
+    await humanPause(page);
     await page.getByRole('textbox', { name: 'Search Text Templates' }).fill('Report- Seller Report, Home Owner Report,  Home Equity Report, 2.0 (NOT LOOKING TO SELL)');
 
     await humanPause(page);
     await page.getByText('Report- Seller Report, Home').first().click();
 
-    await humanPause(page);
-    await page.getByRole('button', { name: 'Send Text' }).click();
+    if (FUBtag === "Seller Report AI") {
+      await humanPause(page);
+      await page.getByRole('button', { name: 'Send via Ylopo AI Text' }).click();
+    } else if (FUBtag === "Seller Report Callaction") {
+      await humanPause(page);
+      await page.getByRole('button', { name: 'Send via CallAction' }).click();
+    } else {
+      await humanPause(page);
+      await page.getByRole('button', { name: 'Send Text' }).click();
+    }
     
     await context.close();
     await browser.close();
-
-    return { url: followupbossContactUrl, reportUrl: ylopoSellerReport };
   } catch (err) {
     await browser.close();
     throw err;
@@ -169,9 +235,12 @@ export default async function run(input = {}) {
   const ylopoLeadUrl = input.ylopoLeadUrl
   const address = input.address
   const followupbossContactUrl = input.followupbossContactUrl
+  const FUBtag = input.FUBtag || "Seller Report Callaction"
 
   const result = await getYlopoSellerReport(ylopoLeadUrl, address);
-  const followupboss = await sendFollowUpBossText(followupbossContactUrl, result.reportUrl);
+  const followupboss = await setSellerReportInFollowUpBoss(followupbossContactUrl, result.reportUrl);
+  await sendFUBText(followupbossContactUrl, result.reportUrl, FUBtag);
+
 
   return { ok: true, result: result.reportUrl };
 }
