@@ -7,8 +7,7 @@ import { fileURLToPath } from 'url';
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 
-
-const scriptName = 'seller-report';
+const scriptName = path.basename(__filename, '.js');
 
 async function getYlopoSellerReport(ylopoLeadUrl, address) {
   const browser = await chromium.launch({ headless: true });
