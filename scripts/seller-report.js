@@ -1,4 +1,3 @@
-// scripts/example.js
 import { chromium } from 'playwright';
 import { humanPause } from '../utils/humanPause.js';
 import { logEvent } from '../utils/logger.js';
@@ -105,7 +104,7 @@ async function getYlopoSellerReport(ylopoLeadUrl, address) {
   }
 }
 
-async function setSellerReportInFollowUpBoss(followupbossContactUrl, ylopoSellerReport) { 
+async function sendTextInFollowUpBoss(followupbossContactUrl, ylopoSellerReport, FUBtag) { 
   const browser = await chromium.launch({ headless: false });
   const sessionFile = path.resolve(__dirname, '../cookies/followupboss-session.json');
   const context = await browser.newContext({ storageState: sessionFile });
@@ -143,41 +142,6 @@ async function setSellerReportInFollowUpBoss(followupbossContactUrl, ylopoSeller
 
     await humanPause(page);
     await page.locator('form').filter({ hasText: 'Ylopo Seller Report' }).getByRole('button').first().click();  
-
-    await context.close();
-    await browser.close();
-
-    return { url: followupbossContactUrl, reportUrl: ylopoSellerReport };
-  } catch (err) {
-    await browser.close();
-    throw err;
-  }
-}
-
-async function sendFUBText(followupbossContactUrl, ylopoSellerReport, FUBtag) {
-  const browser = await chromium.launch({ headless: false });
-  const sessionFile = path.resolve(__dirname, '../cookies/followupboss-session.json');
-  const context = await browser.newContext({ storageState: sessionFile });
-  const page = await context.newPage();
-  page.setDefaultTimeout(60000);
-  
-  try {
-    await page.goto(followupbossContactUrl, { waitUntil: 'domcontentloaded' });
-
-    // If you're redirected to login, session expired — handle below
-    if (page.url().includes('/login')) {
-      logEvent({
-        automation: scriptName,
-        action: 'start',
-        status: 'error-progress',
-        startTime,
-        metadata: { input: req.body.input, error: 'Session not valid / expired. Re-save storageState by logging in manually.' }
-      });
-      await browser.close();
-      process.exit(1);
-    }
-
-    await page.goto(followupbossContactUrl);
 
     // 🕵️ Wait for link inside the "Ylopo Seller Report" form
     const formLink = page.locator('form:has-text("Ylopo Seller Report") a');
@@ -222,9 +186,11 @@ async function sendFUBText(followupbossContactUrl, ylopoSellerReport, FUBtag) {
       await humanPause(page);
       await page.getByRole('button', { name: 'Send Text' }).click();
     }
-    
+
     await context.close();
     await browser.close();
+
+    return { url: followupbossContactUrl, reportUrl: ylopoSellerReport };
   } catch (err) {
     await browser.close();
     throw err;
@@ -238,8 +204,7 @@ export default async function run(input = {}) {
   const FUBtag = input.FUBtag || "Seller Report Callaction"
 
   const result = await getYlopoSellerReport(ylopoLeadUrl, address);
-  const followupboss = await setSellerReportInFollowUpBoss(followupbossContactUrl, result.reportUrl);
-  await sendFUBText(followupbossContactUrl, result.reportUrl, FUBtag);
+  const followupboss = await sendTextInFollowUpBoss(followupbossContactUrl, result.reportUrl, FUBtag);
 
 
   return { ok: true, result: result.reportUrl };
